@@ -19,6 +19,8 @@ jobs:
           path: ~/.virt
       - name: "Setup Python"
         uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
       - name: "Install dependencies"
         run: |
           python -m pip install -U pip setuptools poetry
