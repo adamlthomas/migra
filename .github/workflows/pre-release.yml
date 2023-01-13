@@ -34,6 +34,7 @@ jobs:
           poetry install
           python deploy/vbump.py
           poetry build
+          mv dist/migra-3.0.*.tar.gz dist/migra-3.0.latest.tar.gz
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -41,4 +42,4 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            dist/*
+            dist/migra-3.0.latest.tar.gz
